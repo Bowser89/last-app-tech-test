@@ -1,5 +1,7 @@
 # Project Setup & API Documentation
-### (Written and directed by Augusto Lamona X Last.app)
+
+### Written and directed by Augusto Lamona X Last.app
+
 ## Environment Setup
 
 ### Prerequisites
@@ -9,9 +11,9 @@
 
 ### Running the Project
 
-#### With MakeFile provided
+#### With Docker
 ```sh
-make setup
+docker-compose up --build
 ```
 
 #### Without Docker (Local Development)
@@ -19,6 +21,9 @@ make setup
 npm install
 npm run start:dev
 ```
+
+### Environment Variables
+- Copy `.env.example` to `.env` and update necessary values.
 
 ---
 
@@ -29,26 +34,26 @@ npm run start:dev
 #### **1. Create Reservation**
 - **`POST /reservations`**
 - **Body Parameters:**
-    - `dateTime` (string) – Reservation date and time.
-    - `partySize` (number) – Number of guests
-    - `customerName` (string) – Customer name.
-    - `customerPhone` (string) – Contact phone number.
+  - `dateTime` (string) – Reservation date and time.
+  - `partySize` (number) – Number of guests.
+  - `customerName` (string) – Customer name.
+  - `customerPhone` (string) – Contact phone number.
 
 #### **2. Get Reservation by ID**
 - **`GET /reservations/:id`**
 - **Path Parameter:**
-    - `id` (string) – Reservation ID.
+  - `id` (string) – Reservation ID.
 
 #### **3. Update Reservation**
 - **`PUT /reservations/:id`**
 - **Path Parameter:**
-    - `id` (string) – Reservation ID.
+  - `id` (string) – Reservation ID.
 - **Body Parameters:** *(same as creation)*
 
 #### **4. Delete Reservation**
 - **`DELETE /reservations/:id`**
 - **Path Parameter:**
-    - `id` (string) – Reservation ID.
+  - `id` (string) – Reservation ID.
 
 ---
 
@@ -57,8 +62,8 @@ npm run start:dev
 #### **1. Get Available Time Slots**
 - **`GET /tables/availability`**
 - **Query Parameters:**
-    - `date` (string) – The date to check.
-    - `partySize` (number) – Number of guests.
+  - `date` (string) – The date to check.
+  - `partySize` (number) – Number of guests.
 
 ---
 
@@ -80,11 +85,15 @@ npm run start:dev
 - The system continuously checks for openings.
 - Notifications are sent when a slot becomes available.
 
+### **Database Seeding**
+- On module initialization, a seeder populates the database with dummy tables.
+- If no tables exist, the seeder creates predefined table entries.
+
 ---
 
 ## Testing Strategy
-- **E2E (End-to-End) tests** have been implemnted for lack of time.
+- **E2E (End-to-End) tests** have been implemented.
 - **Future improvements:**
-    - Add **unit tests** for service logic.
-    - Add **integration tests** for repository interactions.
+  - Add **unit tests** for service logic.
+  - Add **integration tests** for repository interactions.
 
