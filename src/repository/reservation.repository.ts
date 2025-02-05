@@ -40,7 +40,7 @@ export class ReservationRepository extends Repository<Reservation> {
 
   async getAllReservations(): Promise<Reservation[]> {
     return this.createQueryBuilder('reservation')
-      .leftJoinAndSelect('reservation.table', 'table') // ✅ Include table data
+      .leftJoinAndSelect('reservation.table', 'table')
       .orderBy('reservation.reservationTime', 'ASC')
       .getMany();
   }

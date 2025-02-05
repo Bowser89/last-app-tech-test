@@ -29,6 +29,6 @@ export class UpdateReservationInput {
   partySize?: number;
 
   toReservationTime(): string {
-    return dayjs(`${this.date}T${this.time}`).toISOString(); // ✅ Always sets a valid value
+    return dayjs(`${this.date}T${this.time}`).toISOString();
   }
 }
