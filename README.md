@@ -23,7 +23,7 @@ npm run start:dev
 ```
 
 ### Environment Variables
-- Copy `.env.example` to `.env` and update necessary values.
+- Copy `development.env` to `.env` and update necessary values.
 
 ---
 
