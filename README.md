@@ -13,7 +13,7 @@
 
 #### With Docker
 ```sh
-docker-compose up --build
+make setup
 ```
 
 #### Without Docker (Local Development)
